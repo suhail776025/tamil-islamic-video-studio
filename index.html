@@ -1,49 +1,37 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="ta">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#10251f"><title>Tamil Islamic Video Studio</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#10251f">
+<title>Tamil Islamic Video Studio</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
 <style>
-:root{color-scheme:dark;--gold:#e4c477}*{box-sizing:border-box}
-body{margin:0;background:linear-gradient(145deg,#0b1713,#172820);color:#f3f6f2;font:16px system-ui,sans-serif}
-main{max-width:850px;margin:auto;padding:22px 15px 60px}.hero{padding:24px 4px}.tag{color:var(--gold);letter-spacing:.12em;font-size:12px;font-weight:700}
-h1{font-size:clamp(28px,7vw,42px);margin:8px 0}p{color:#afc2b8;line-height:1.6}
-.card{background:#14231e;border:1px solid #294239;border-radius:18px;padding:18px;margin:14px 0}
-label{display:block;font-weight:650;margin:13px 0 7px}input,textarea,select{width:100%;padding:13px;border:1px solid #3b594c;border-radius:11px;background:#0c1714;color:#fff;font:inherit}
-textarea{min-height:110px;resize:vertical}button{border:0;border-radius:11px;padding:13px 17px;background:var(--gold);color:#172018;font-weight:750;font-size:15px;cursor:pointer;margin:8px 7px 0 0}
-button.secondary{background:#294239;color:#f3f6f2}button:disabled{opacity:.5}.grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-#output{white-space:pre-wrap;line-height:1.75;overflow-wrap:anywhere}.status{color:var(--gold);min-height:25px}.small{font-size:13px;color:#afc2b8}
-@media(max-width:560px){.grid{grid-template-columns:1fr}.card{padding:15px}}
-</style></head>
-<body><main>
-<header class="hero"><div class="tag">FREE STARTER • TAMIL • ISLAMIC EDUCATION</div><h1>தமிழ் AI வீடியோ ஸ்டுடியோ</h1><p>ஒரு தலைப்பை உள்ளிடுங்கள். தமிழ் வீடியோ ஸ்கிரிப்ட் மற்றும் காட்சி திட்டத்தை உருவாக்குங்கள்.</p></header>
-<section class="card">
-<label for="key">Gemini API Key</label><input id="key" type="password" autocomplete="off" placeholder="Google AI Studio API key">
-<p class="small">இந்த starter உங்கள் browser-இலிருந்து நேரடியாக Google Gemini API-ஐ அழைக்கிறது. தனிப்பட்ட API key-ஐ மற்றவர்களுடன் பகிர வேண்டாம்.</p>
-<label for="topic">வீடியோ தலைப்பு / Topic</label><textarea id="topic" placeholder="உதாரணம்: ஆதம் (அலைஹிஸ்ஸலாம்) அவர்களின் வாழ்க்கை வரலாறு"></textarea>
-<div class="grid"><div><label for="duration">வீடியோ நீளம்</label><select id="duration"><option>5 minutes</option><option selected>7 minutes</option><option>10 minutes</option></select></div><div><label for="format">Video format</label><select id="format"><option>16:9 YouTube</option><option>9:16 Shorts / Reels</option><option>1:1 Square</option></select></div></div>
-<button id="generate">ஸ்கிரிப்ட் உருவாக்கு</button><button class="secondary" id="voice">தமிழ் குரல் கேள்</button><div class="status" id="status" role="status"></div>
-</section>
-<section class="card"><h2>உங்கள் வீடியோ ஸ்கிரிப்ட்</h2><div id="output">உருவாக்கிய ஸ்கிரிப்ட் இங்கே தோன்றும்.</div><button class="secondary" id="copy">Copy</button><button class="secondary" id="download">Download .txt</button></section>
-<section class="card"><h2>முக்கிய குறிப்பு</h2><p>இது starter பதிப்பு: தமிழ் ஸ்கிரிப்ட் மற்றும் scene prompts உருவாக்கும். MP3 export, நேரத்துடன் SRT subtitles, music mixing, MP4 rendering இன்னும் சேர்க்கப்படவில்லை.</p><p class="small">குர்ஆன் வசனங்கள், ஹதீஸ், அரபு உரை, source அல்லது authenticity grade ஆகியவற்றை AI உருவாக்கிக் கூறாமல் இருக்க prompt-இல் பாதுகாப்பு வழிமுறைகள் உள்ளன. மத ஆதாரங்களை நம்பகமான மூலத்துடன் சரிபார்க்கவும்.</p></section>
-</main>
-<script>
-const $=id=>document.getElementById(id);let latest='';
-$('generate').onclick=async()=>{
- const key=$('key').value.trim(),topic=$('topic').value.trim();
- if(!key||!topic){$('status').textContent='API key மற்றும் தலைப்பை உள்ளிடுங்கள்.';return}
- const btn=$('generate');btn.disabled=true;$('status').textContent='ஸ்கிரிப்ட் உருவாக்கப்படுகிறது...';$('output').textContent='';
- const prompt=`நீங்கள் தமிழ் documentary scriptwriter. தலைப்பு: ${topic}. நீளம்: ${$('duration').value}. Format: ${$('format').value}.
-தமிழில் hook, அறிமுகம், scenes, narration, ஒவ்வொரு scene-க்கும் English visual prompt, on-screen Tamil text, முடிவு ஆகியவற்றைத் தரவும். முக்கிய factual claims-க்கு நம்பகமான source பெயர் மற்றும் URL குறிப்பிடவும்.
-இஸ்லாமிய உள்ளடக்க விதிகள்: குர்ஆன் வசனம், ஹதீஸ், அரபு உரை, நூல்/எண், அறிவிப்பாளர், authenticity grade ஆகியவற்றை கற்பனை செய்யாதீர்கள். சரிபார்க்க முடியாவிட்டால் [சரிபார்க்க வேண்டும்] என்று குறிக்கவும். ஆதாரத் தகவல், விளக்கவுரை, கருத்து ஆகியவற்றைப் பிரிக்கவும். அறிஞர்களிடையே கருத்து வேறுபாடு இருந்தால் குறிப்பிடவும்.`;
- try{
-  const res=await fetch('https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key='+encodeURIComponent(key),{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({contents:[{parts:[{text:prompt}]}],tools:[{google_search:{}}]})});
-  const data=await res.json();if(!res.ok)throw new Error(data.error?.message||'API request failed');
-  latest=(data.candidates?.[0]?.content?.parts||[]).map(p=>p.text||'').join('\n').trim();if(!latest)throw new Error('No text returned');
-  $('output').textContent=latest;$('status').textContent='முடிந்தது! ஆதாரங்களைச் சரிபார்க்கவும்.';
- }catch(e){$('status').textContent='பிழை: '+e.message}finally{btn.disabled=false}
-};
-$('voice').onclick=()=>{const t=latest||$('topic').value;if(!t)return;if(!('speechSynthesis'in window)){ $('status').textContent='இந்த browser-ல் voice support இல்லை.';return}speechSynthesis.cancel();const u=new SpeechSynthesisUtterance(t.slice(0,4500));u.lang='ta-IN';const v=speechSynthesis.getVoices().find(x=>x.lang.toLowerCase().startsWith('ta'));if(v)u.voice=v;speechSynthesis.speak(u)};
-$('copy').onclick=async()=>{if(!latest)return;try{await navigator.clipboard.writeText(latest);$('status').textContent='Copied.'}catch{$('status').textContent='Text-ஐ select செய்து copy செய்யவும்.'}};
-$('download').onclick=()=>{if(!latest)return;const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([latest],{type:'text/plain;charset=utf-8'}));a.download='tamil-video-script.txt';a.click();URL.revokeObjectURL(a.href)};
-</script></body></html>
+:root{--bg:#10251f;--card:#183629;--ink:#f4efe0;--gold:#e0b84c;--mut:#a9bdb3}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans Tamil",system-ui,sans-serif;padding:16px;max-width:760px;margin:auto}
+h1{font-size:24px;margin:8px 0}h2{font-size:18px;color:var(--gold)}
+.tag{color:var(--gold);font-size:12px;letter-spacing:1px}
+.card{background:var(--card);border-radius:14px;padding:14px;margin:12px 0}
+label{display:block;margin:10px 0 4px;color:var(--mut);font-size:14px}
+input[type=text],select{width:100%;padding:12px;border-radius:10px;border:1px solid #2f5a47;background:#0d1d18;color:var(--ink);font:inherit;font-size:16px}
+button{padding:12px 16px;border:0;border-radius:10px;background:var(--gold);color:#10251f;font:inherit;font-weight:700;margin:6px 6px 0 0;cursor:pointer}
+button.alt{background:#2f5a47;color:var(--ink)}button:disabled{opacity:.45}
+canvas{width:100%;border-radius:12px;background:#000;display:block}
+#status{color:var(--gold);min-height:22px;margin-top:8px;font-size:14px}
+#list{max-height:260px;overflow:auto;font-size:14px;line-height:1.6}
+.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+small{color:var(--mut)}
+</style>
+</head>
+<body>
+<div class="tag">FREE • NO API KEY • TAMIL • ISLAMIC EDUCATION</div>
+<h1>தமிழ் AI வீடியோ ஸ்டுடியோ</h1>
+<small>தலைப்பை உள்ளிடுங்கள் → ஸ்கிரிப்ட், படங்கள், தமிழ் குரல், subtitles, background music உடன் வீடியோ தயாராகும். API key தேவையில்லை.</small>
+
+<div class="card">
+<label>வீடியோ தலைப்பு / Topic</label>
+<input type="text" id="topic" placeholder="எ.கா: ரமலானின் சிறப்புகள்">
+<div class="row">
+<div style="flex:1"><label>நீளம்</label><select id="len"><option value="6">சுமார் 3 நிமிடம்</option><option value="9" selected>சுமார் 5 நிமிடம்</option><option value="12">சுமார் 7 நிமிடம்</option></select></div>
+<div style="flex:1"><label>Format</label><select id="fmt"><option value="16:9">16:9 YouTube</option><option value="9:16">9:16 Shorts/Reels</option><option value="1:1">1:1 Square</option></select></div>
