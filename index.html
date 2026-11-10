@@ -1,37 +1,46 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ta">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#10251f">
-<title>Tamil Islamic Video Studio</title>
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;700&display=swap" rel="stylesheet">
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#071b16">
+<title>தமிழ் Islamic Video Studio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Tamil:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#10251f;--card:#183629;--ink:#f4efe0;--gold:#e0b84c;--mut:#a9bdb3}
-*{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:"Noto Sans Tamil",system-ui,sans-serif;padding:16px;max-width:760px;margin:auto}
-h1{font-size:24px;margin:8px 0}h2{font-size:18px;color:var(--gold)}
-.tag{color:var(--gold);font-size:12px;letter-spacing:1px}
-.card{background:var(--card);border-radius:14px;padding:14px;margin:12px 0}
-label{display:block;margin:10px 0 4px;color:var(--mut);font-size:14px}
-input[type=text],select{width:100%;padding:12px;border-radius:10px;border:1px solid #2f5a47;background:#0d1d18;color:var(--ink);font:inherit;font-size:16px}
-button{padding:12px 16px;border:0;border-radius:10px;background:var(--gold);color:#10251f;font:inherit;font-weight:700;margin:6px 6px 0 0;cursor:pointer}
-button.alt{background:#2f5a47;color:var(--ink)}button:disabled{opacity:.45}
-canvas{width:100%;border-radius:12px;background:#000;display:block}
-#status{color:var(--gold);min-height:22px;margin-top:8px;font-size:14px}
-#list{max-height:260px;overflow:auto;font-size:14px;line-height:1.6}
-.row{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
-small{color:var(--mut)}
-</style>
-</head>
-<body>
-<div class="tag">FREE • NO API KEY • TAMIL • ISLAMIC EDUCATION</div>
-<h1>தமிழ் AI வீடியோ ஸ்டுடியோ</h1>
-<small>தலைப்பை உள்ளிடுங்கள் → ஸ்கிரிப்ட், படங்கள், தமிழ் குரல், subtitles, background music உடன் வீடியோ தயாராகும். API key தேவையில்லை.</small>
-
-<div class="card">
-<label>வீடியோ தலைப்பு / Topic</label>
-<input type="text" id="topic" placeholder="எ.கா: ரமலானின் சிறப்புகள்">
-<div class="row">
-<div style="flex:1"><label>நீளம்</label><select id="len"><option value="6">சுமார் 3 நிமிடம்</option><option value="9" selected>சுமார் 5 நிமிடம்</option><option value="12">சுமார் 7 நிமிடம்</option></select></div>
-<div style="flex:1"><label>Format</label><select id="fmt"><option value="16:9">16:9 YouTube</option><option value="9:16">9:16 Shorts/Reels</option><option value="1:1">1:1 Square</option></select></div>
+:root{color-scheme:dark;--bg:#071b16;--panel:#102b22;--panel2:#16382c;--gold:#e8c36a;--text:#f6f2e8;--muted:#b2c4ba;--line:#315444}*{box-sizing:border-box}body{margin:0;background:radial-gradient(ellipse at top,#163c2d 0,#071b16 55%);color:var(--text);font-family:"Noto Sans Tamil",system-ui,sans-serif;min-height:100vh;padding:22px 14px}.wrap{max-width:980px;margin:auto}.top{display:flex;align-items:center;gap:12px}.logo{width:46px;height:46px;border:1px solid var(--gold);border-radius:15px;display:grid;place-items:center;color:var(--gold);font-size:24px}.eyebrow{font-size:11px;letter-spacing:2px;color:var(--gold)}h1{font-size:clamp(23px,5vw,36px);margin:3px 0}p{color:var(--muted);line-height:1.7}.hero{padding:18px 0 12px}.grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}.card{background:linear-gradient(145deg,#15372b,#0e281f);border:1px solid var(--line);border-radius:18px;padding:18px;margin:12px 0;box-shadow:0 12px 32px #0002}.wide{grid-column:1/-1}h2{font-size:18px;color:var(--gold);margin:0 0 12px}label{display:block;font-size:13px;color:var(--muted);margin:12px 0 6px}input,select,textarea{width:100%;background:#071b16;border:1px solid var(--line);border-radius:11px;padding:12px;color:var(--text);font:inherit;font-size:15px}textarea{min-height:170px;line-height:1.8;resize:vertical}.two{display:grid;grid-template-columns:1fr 1fr;gap:12px}.btns{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}button{border:0;border-radius:11px;background:var(--gold);color:#10251b;padding:11px 15px;font:inherit;font-weight:700;cursor:pointer}button.secondary{background:#234a39;color:var(--text);border:1px solid #426b56}button:disabled{opacity:.5;cursor:not-allowed}.hint{font-size:12px;color:var(--muted)}.notice{border-left:3px solid var(--gold);padding:9px 12px;background:#e8c36a12;border-radius:0 10px 10px 0;font-size:12px;color:#e9dfc8;line-height:1.7}.scene{padding:12px;border:1px solid var(--line);border-radius:12px;margin:9px 0;background:#081e17}.scene b{color:var(--gold)}canvas{display:block;width:100%;border-radius:12px;background:#000;aspect-ratio:16/9}.status{min-height:22px;color:var(--gold);font-size:13px;margin-top:9px}.pill{display:inline-block;border:1px solid var(--line);border-radius:99px;padding:5px 9px;font-size:11px;color:var(--muted)}footer{text-align:center;color:var(--muted);font-size:11px;padding:20px}@media(max-width:680px){.grid,.two{grid-template-columns:1fr}.wide{grid-column:auto}.card{padding:14px}}
+</style></head>
+<body><main class="wrap">
+<header class="top"><div class="logo">☾</div><div><div class="eyebrow">CREATIVE WORKSPACE · TAMIL</div><h1>தமிழ் Islamic Video Studio</h1></div></header>
+<section class="hero"><p>உங்கள் தலைப்பிலிருந்து தமிழ் உரை, காட்சி திட்டம், குரல் preview மற்றும் subtitles உருவாக்க உதவும் இலவச studio.</p><span class="pill">FREE TO USE</span> <span class="pill">NO API KEY</span> <span class="pill">BROWSER BASED</span></section>
+<div class="grid">
+<section class="card"><h2>01 · வீடியோ அமைப்புகள்</h2><label for="topic">வீடியோ தலைப்பு</label><input id="topic" placeholder="உதா: தொழுகையின் முக்கியத்துவம்"><div class="two"><div><label for="duration">வீடியோ வகை</label><select id="duration"><option value="short">Shorts · 60 வினாடி</option><option value="medium" selected>சாதாரண வீடியோ · 3–5 நிமிடம்</option><option value="long">விரிவான வீடியோ · 5–7 நிமிடம்</option></select></div><div><label for="format">திரை அளவு</label><select id="format"><option value="16:9">YouTube · 16:9</option><option value="9:16">Shorts · 9:16</option><option value="1:1">Square · 1:1</option></select></div></div><label for="tone">விளக்க நடை</label><select id="tone"><option>எளிய தமிழ்</option><option>உணர்வுப்பூர்வமான நடை</option><option>கல்வி விளக்க நடை</option></select><div class="btns"><button id="generate">ஸ்கிரிப்ட் உருவாக்கு</button><button class="secondary" id="sample">மாதிரி தலைப்பு</button></div><div id="status" class="status" aria-live="polite"></div></section>
+<section class="card"><h2>02 · முக்கிய குறிப்பு</h2><div class="notice">இந்த இலவச பதிப்பு AI server/API-ஐ அழைக்காது. தலைப்பின் அடிப்படையில் திருத்தக்கூடிய மாதிரி script மற்றும் scene outline உருவாக்கும். குரல் preview உங்கள் browser-ன் Tamil voice வசதியைப் பொறுத்தது.</div><p class="hint">குர்ஆன் வசனம், ஹதீஸ், அறிவிப்பாளர் பெயர் அல்லது மார்க்கத் தீர்ப்பு சேர்க்கும் முன் நம்பகமான ஆதாரத்தில் சரிபார்க்கவும். உறுதிப்படுத்தப்படாத தகவலை உண்மை என வெளியிட வேண்டாம்.</p></section>
+<section class="card wide"><h2>03 · தமிழ் ஸ்கிரிப்ட்</h2><label for="script">உங்கள் உரையை இங்கே திருத்தலாம்</label><textarea id="script" placeholder="தலைப்பை உள்ளிட்டு ஸ்கிரிப்ட் உருவாக்கு என்பதை அழுத்துங்கள்..."></textarea><div class="btns"><button id="voice">குரல் கேள் ▶</button><button class="secondary" id="stop">நிறுத்து ■</button><button class="secondary" id="downloadTxt">TXT பதிவிறக்கு</button><button class="secondary" id="downloadSrt">SRT subtitles</button></div><p class="hint">குரல் வசதி சாதனத்தில் உள்ள speech synthesis / Tamil voice கிடைப்பதைப் பொறுத்தது.</p></section>
+<section class="card wide"><h2>04 · காட்சி திட்டம்</h2><div id="scenes" class="hint">ஸ்கிரிப்ட் உருவாக்கியதும் காட்சிகள் இங்கே தோன்றும்.</div></section>
+<section class="card wide"><h2>05 · வீடியோ preview</h2><canvas id="preview" width="1280" height="720"></canvas><div class="btns"><button id="playPreview">20-sec preview உருவாக்கு</button><button class="secondary" id="stopPreview" disabled>Preview நிறுத்து</button><a id="videoDownload" hidden download="tamil-islamic-preview.webm" style="color:var(--gold);align-self:center">WebM பதிவிறக்கு</a></div><p class="hint">இது title-card style visual preview மட்டுமே; முழு narration உடன் MP4 video export அல்ல.</p></section>
+</div><footer>தமிழ் Islamic Video Studio · பொறுப்பான, ஆதாரச் சரிபார்ப்புடன் கூடிய கல்வி உள்ளடக்கத்திற்காக</footer></main>
+<script>
+const $=id=>document.getElementById(id);let previewTimer=null,recording=null,recordedChunks=[];
+function makeScript(topic,duration,tone){const intro='அஸ்ஸலாமு அலைக்கும் வரஹ்மத்துல்லாஹி வபரகாத்துஹு.';const parts=[
+'இன்றைய நமது தலைப்பு: '+topic+'. இந்த விஷயத்தை எளிய தமிழில் புரிந்துகொள்ள முயற்சி செய்வோம்.',
+'முதலில், இந்தத் தலைப்பின் அடிப்படை அர்த்தத்தையும் அதன் முக்கியத்துவத்தையும் அறிந்துகொள்வோம். ஒரு முஸ்லிமின் அன்றாட வாழ்க்கையில் நல்ல அறிவும் நல்ல செயல்களும் ஒன்றோடொன்று தொடர்புடையவை.',
+'இந்த விஷயத்தை நமது வாழ்க்கையில் செயல்படுத்த சிறிய, தொடர்ச்சியான முயற்சிகள் உதவும். நாம் கற்றதை குடும்பத்தினருடனும் நண்பர்களுடனும் நல்ல முறையில் பகிர்ந்து கொள்ளலாம்.',
+'மார்க்கம் தொடர்பான குறிப்பிட்ட வசனங்கள் அல்லது ஹதீஸ்களைச் சேர்க்கும்போது அவற்றின் மூலத்தையும் பொருளையும் நம்பகமான அறிஞர்கள் அல்லது ஆதாரங்கள் மூலம் சரிபார்ப்பது அவசியம்.',
+'இந்த விளக்கம் ஒரு பொதுவான அறிமுகம் மட்டுமே. உங்கள் அறிவை தொடர்ந்து வளர்த்துக் கொள்ளுங்கள்; கற்ற நல்ல விஷயங்களை வாழ்க்கையில் நடைமுறைப்படுத்துங்கள்.',
+'இந்த வீடியோ பயனுள்ளதாக இருந்தால் பகிருங்கள். மேலும் பயனுள்ள தமிழ் இஸ்லாமிய விளக்கங்களுக்கு இணைந்திருங்கள். ஜஸாகுமுல்லாஹு கைரன்.'
+];if(duration==='short')return [intro,...parts.slice(0,3),parts[5]].join('\n\n');if(duration==='long')return [intro,...parts,...parts.slice(1,3)].join('\n\n');return [intro,...parts].join('\n\n')}
+function makeScenes(text,topic){let paras=text.split(/\n\s*\n/).filter(Boolean);return paras.map((p,i)=>({title:['தொடக்க அறிமுகம்','தலைப்பு அறிமுகம்','முக்கிய விளக்கம்','வாழ்க்கையில் நடைமுறை','ஆதாரச் சரிபார்ப்பு','முடிவுரை'][i%6],text:p,visual:['அமைதியான பள்ளிவாசல் வெளிப்புறம் / தலைப்பு எழுத்து','இயற்கை காட்சி மற்றும் தலைப்பு','புத்தகம், குறிப்பேடு, மென்மையான ஒளி','அன்றாட வாழ்க்கையின் நல்ல செயல்கள்','குர்ஆன் / நம்பகமான நூல் — உரையை சரிபார்த்து மட்டும் காட்டவும்','எளிய முடிவு அட்டை'][i%6]}))}
+function renderScenes(items){$('scenes').innerHTML=items.map((s,i)=>'<article class="scene"><b>Scene '+(i+1)+' · '+s.title+'</b><p>'+escapeHtml(s.text)+'</p><div class="hint">Visual: '+escapeHtml(s.visual)+'</div></article>').join('')}
+function escapeHtml(s){return s.replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function currentScenes(){return makeScenes($('script').value,$('topic').value.trim())}
+$('generate').onclick=()=>{let t=$('topic').value.trim();if(!t){$('status').textContent='முதலில் வீடியோ தலைப்பை உள்ளிடுங்கள்.';return}let s=makeScript(t,$('duration').value,$('tone').value);$('script').value=s;renderScenes(makeScenes(s,t));$('status').textContent='மாதிரி ஸ்கிரிப்ட் தயார். உங்கள் தேவைக்கேற்ப திருத்துங்கள்.';drawCard(t)};
+$('sample').onclick=()=>{$('topic').value='ரமலானின் சிறப்புகள்';$('generate').click()};
+$('script').addEventListener('input',()=>renderScenes(currentScenes()));
+$('voice').onclick=()=>{if(!('speechSynthesis'in window)){$('status').textContent='இந்த browser-ல் குரல் வசதி இல்லை.';return}speechSynthesis.cancel();let u=new SpeechSynthesisUtterance($('script').value);u.lang='ta-IN';u.rate=.9;speechSynthesis.speak(u);$('status').textContent='குரல் வாசிப்பு தொடங்கியது. Tamil voice கிடைக்காவிட்டால் சாதன voice settings சரிபார்க்கவும்.'};
+$('stop').onclick=()=>{if('speechSynthesis'in window)speechSynthesis.cancel()};
+function download(name,content,type){let a=document.createElement('a'),url=URL.createObjectURL(new Blob([content],{type}));a.href=url;a.download=name;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000)}
+$('downloadTxt').onclick=()=>download('tamil-islamic-script.txt',$('script').value,'text/plain;charset=utf-8');
+$('downloadSrt').onclick=()=>{let ps=$('script').value.split(/\n\s*\n/).filter(Boolean),secs=0,out=ps.map((p,i)=>{let start=secs;secs+=Math.max(5,Math.ceil(p.length/12));let end=secs;const stamp=n=>new Date(n*1000).toISOString().slice(11,23).replace('.',',');return (i+1)+'\n'+stamp(start)+' --> '+stamp(end)+'\n'+p+'\n'}).join('\n');download('tamil-subtitles.srt',out,'text/plain;charset=utf-8')};
+const canvas=$('preview'),ctx=canvas.getContext('2d');function drawCard(title='தமிழ் இஸ்லாமிய அறிவு'){ctx.fillStyle='#071b16';ctx.fillRect(0,0,1280,720);let g=ctx.createRadialGradient(640,280,40,640,360,650);g.addColorStop(0,'#24523c');g.addColorStop(1,'#071b16');ctx.fillStyle=g;ctx.fillRect(0,0,1280,720);ctx.strokeStyle='#e8c36a';ctx.lineWidth=3;ctx.strokeRect(48,48,1184,624);ctx.textAlign='center';ctx.fillStyle='#e8c36a';ctx.font='48px serif';ctx.fillText('☾',640,180);ctx.fillStyle='#f6f2e8';ctx.font='bold 52px sans-serif';let words=title.split(' '),line='',lines=[];for(let w of words){let test=line?line+' '+w:w;if(ctx.measureText(test).width>950){lines.push(line);line=w}else line=test}if(line)lines.push(line);lines.slice(0,3).forEach((l,i)=>ctx.fillText(l,640,315+i*75));ctx.fillStyle='#c3d2c8';ctx.font='26px sans-serif';ctx.fillText('தமிழில் பயனுள்ள இஸ்லாமிய விளக்கம்',640,570)}
+drawCard();
+$('playPreview').onclick=()=>{if(!canvas.captureStream||!window.MediaRecorder){$('status').textContent='இந்த browser-ல் WebM recording ஆதரவு இல்லை.';return}if(previewTimer)clearInterval(previewTimer);let title=$('topic').value.trim()||'தமிழ் இஸ்லாமிய அறிவு',stream=canvas.captureStream(2);let mime=MediaRecorder.isTypeSupported('video/webm;codecs=vp9')?'video/webm;codecs=vp9':'video/webm';try{recording=new MediaRecorder(stream,{mimeType:mime})}catch(e){$('status').textContent='இந்த browser-ல் preview பதிவு செய்ய முடியவில்லை.';return}recordedChunks=[];recording.ondataavailable=e=>{if(e.data.size)recordedChunks.push(e.data)};recording.onstop=()=>{let blob=new Blob(recordedChunks,{type:'video/webm'}),url=URL.createObjectURL(blob);$('videoDownload').href=url;$('videoDownload').hidden=false;stream.getTracks().forEach(t=>t.stop());$('stopPreview').disabled=true;$('status').textContent='20 வினாடி WebM preview தயார். பதிவிறக்க இணைப்பைத் தொடுங்கள்.'};recording.start();$('stopPreview').disabled=false;$('status').textContent='Preview பதிவு செய்யப்படுகிறது...';let count=0;previewTimer=setInterval(()=>{count++;drawCard(title);ctx.fillStyle='#e8c36a';ctx.font='22px sans-serif';ctx.fillText('தமிழ் Islamic Video Studio',640,625);if(count>=20){clearInterval(previewTimer);previewTimer=null;if(recording&&recording.state!=='inactive')recording.stop()}},1000)};
+$('stopPreview').onclick=()=>{if(previewTimer){clearInterval(previewTimer);previewTimer=null}if(recording&&recording.state!=='inactive')recording.stop()};
+</script></body></html>
